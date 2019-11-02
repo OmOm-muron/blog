@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+/* login */
+.login-form {
+  padding-bottom: 5%;
+}
+.login-form p {
+  margin-top: 5%;
+}
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  background: #333;
+  border: solid thin #aaa;
+  border-radius: 3%;
+}
+.login-form input[type="submit"] {
+  background: #0f0;
+  cursor: pointer;
+  color: #000;
+  width: 80px;
+}
+.login-form input[type="submit"]:hover {
+  background: #0a0;
+}
+
+/* footer-manager */
+.footer-manager {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* new-article */
+.new-article {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+.new-article input[type="submit"] {
+  background: #0f0;
+  cursor: pointer;
+  color: #000;
+  width: 80px;
+  margin-top: 3%;
+}
+.new-article input[type="submit"]:hover {
+  background: #0a0;
+}
+.new-article input[type="text"] {
+  background: #fff;
+  color: #000;
+  border: solid thin #aaa;
+  border-radius: 3%;
+  width: 100%;
+  margin-top: 3%;
+}
+.new-article textarea {
+  background: #fff;
+  color: #000;
+  border: solid thin #aaa;
+  width: 100%;
+  height: 30em;
+  margin-top: 3%;
+}
+
+/* create-category */
+.create-category {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2%;
+}
+.create-category form {
+  margin: auto;
+}
+.create-category input[type="submit"] {
+  background: #0f0;
+  cursor: pointer;
+  color: #000;
+  width: 60px;
+}
+.create-category input[type="submit"]:hover {
+  background: #0a0;
+}
+.create-category input[type="text"] {
+  background: #fff;
+  color: #000;
+  border: solid thin #aaa;
+  border-radius: 3%;
+}
+
+/* delete-category */
+.category-list input[type="submit"] {
+  background: #f00;
+  cursor: pointer;
+  color: #000;
+  width: 60px;
+  margin-top: 3%;
+}
+.category-list input[type="submit"]:hover {
+  background: #a00;
+}
