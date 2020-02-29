@@ -9,7 +9,7 @@ public class CategoryDTO {
      * フィールド：カテゴリの情報
      ******************************/
     // category ID
-    private int co_categoryid;
+    private int co_categoryid = -1;
     // category name
     private String co_categoryname;
     
@@ -33,5 +33,12 @@ public class CategoryDTO {
     
     public void setCategoryname(String ex_categoryname) {
         this.co_categoryname = ex_categoryname;
+    }
+    
+    /******************************
+     * check this instance is valid or not
+     ******************************/
+    public boolean isValid() {
+    	return this.co_categoryid >= 0;
     }
 }

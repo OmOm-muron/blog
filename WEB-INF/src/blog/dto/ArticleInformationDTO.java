@@ -11,17 +11,19 @@ public class ArticleInformationDTO {
      * フィールド：ブログ記事の情報
      ******************************/
     // article ID
-    private int co_articleid;
+    private int co_articleid = -1;
     // submit date
     private Date co_submitdate;
+    // update date
+    private Date co_updatedate;
     // title
     private String co_title;
     // categories
-    private int co_category1;
-    private int co_category2;
-    private int co_category3;
-    private int co_category4;
-    private int co_category5;
+    private int co_category1 = 0;
+    private int co_category2 = 0;
+    private int co_category3 = 0;
+    private int co_category4 = 0;
+    private int co_category5 = 0;
     // article content
     private String co_article;
     
@@ -34,6 +36,10 @@ public class ArticleInformationDTO {
     
     public Date getSubmitdate() {
         return this.co_submitdate;
+    }
+    
+    public Date getUpdatedate() {
+        return this.co_updatedate;
     }
     
     public String getTitle() {
@@ -75,6 +81,10 @@ public class ArticleInformationDTO {
         this.co_submitdate = ex_submitdate;
     }
     
+    public void setUpdatedate(Date ex_updatedate) {
+        this.co_updatedate = ex_updatedate;
+    }
+    
     public void setTitle(String ex_title) {
         this.co_title = ex_title;
     }
@@ -101,5 +111,12 @@ public class ArticleInformationDTO {
     
     public void setArticle(String ex_article) {
         this.co_article = ex_article;
+    }
+    
+    /******************************
+     * check this instance is valid or not
+     ******************************/
+    public boolean isValid() {
+    	return this.co_articleid >= 0;
     }
 }

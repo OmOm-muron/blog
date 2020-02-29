@@ -32,7 +32,7 @@ public class RootDAO implements AutoCloseable {
         } catch (NamingException | SQLException e) {
             // connection = null にする
             co_connection = null;
-            // 例外はそのまま出力
+            // a例外はそのまま出力
             e.printStackTrace();
             throw e;
         }
@@ -57,8 +57,8 @@ public class RootDAO implements AutoCloseable {
     /**
      * PreparedStatementを取得する
      */
-    public PreparedStatement getPreparedStatement(String sql) throws Exception {
-        return getConnection().prepareStatement(sql);
+    public PreparedStatement getPreparedStatement(String ex_sql) throws Exception {
+        return getConnection().prepareStatement(ex_sql);
     }
 
     /**
