@@ -6,51 +6,51 @@ package login.dto;
  */
 public class UserInformationDTO {
     // Fields
-    private String co_userid;
-    private String co_username;
-    private int co_roleid;
-    private String co_rolename;
-    private String co_password;
+    private String userid;
+    private String username;
+    private int roleid;
+    private String rolename;
+    private String password;
 
     // Getter
     public String getUserid() {
-        return this.co_userid;
+        return this.userid;
     }
     
     public String getUsername() {
-        return this.co_username;
+        return this.username;
     }
     
     public int getRoleid() {
-        return this.co_roleid;
+        return this.roleid;
     }
     
     public String getRolename() {
-        return this.co_rolename;
+        return this.rolename;
     }
     
     public String getPassword() {
-        return this.co_password;
+        return this.password;
     }
 
     //Setter
-    public void setUserid(String ex_userid) {
-        this.co_userid = ex_userid;
+    public void setUserid(String userid) {
+        this.userid = userid;
     }
     
-    public void setUsername(String ex_username) {
-        this.co_username = ex_username;
+    public void setUsername(String username) {
+        this.username = username;
     }
     
-    public void setRoleid(int ex_roleid) {
-        this.co_roleid = ex_roleid;
+    public void setRoleid(int roleid) {
+        this.roleid = roleid;
     }
     
-    public void setRolename(String ex_rolename) {
-        this.co_rolename = ex_rolename;
+    public void setRolename(String rolename) {
+        this.rolename = rolename;
     }
     
-    public void setPassword(String ex_password) {
-        this.co_password = ex_password;
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

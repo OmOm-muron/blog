@@ -16,25 +16,21 @@
       <div class="main-content">
         <%@ include file="/html/back-to-top.html"%>
         <div class="sub-title">
-          <p>月別記事一覧</p>
+          <p>月別記事一覧(<c:out value="${currentYm}"/>)</p>
         </div>
         <div class="change-key">
-          <a href="/blog/list-monthly?month=xx">前月(yyyy/MM)</a>
+          <a href="/blog/list-monthly?yearMonth=<c:out value="${previousYm}"/>">前月(<c:out value="${previousYm}"/>)</a>
           <button type="button" name="select-month" value="yy">月選択</button>
-          <a href="/blog/list-monthly?month=xx">翌月(yyyy/MM)</a>
+          <a href="/blog/list-monthly?yearMonth=<c:out value="${nextYm}"/>">翌月(<c:out value="${nextYm}"/>)</a>
         </div>
         <div class="article-list">
-          <li>記事タイトル(yyyy/MM/dd)</li>
-          <li>記事タイトル(yyyy/MM/dd)</li>
-          <li>記事タイトル(yyyy/MM/dd)</li>
-          <li>記事タイトル(yyyy/MM/dd)</li>
-          <li>記事タイトル(yyyy/MM/dd)</li>
-          <li>記事タイトル(yyyy/MM/dd)</li>
-          <li>記事タイトル(yyyy/MM/dd)</li>
-          <li>記事タイトル(yyyy/MM/dd)</li>
-          <li>記事タイトル(yyyy/MM/dd)</li>
-          <li>記事タイトル(yyyy/MM/dd)</li>
-          <li>記事タイトル(yyyy/MM/dd)</li>
+          <c:forEach items="${articleList}" var="articleHeader">
+            <li>
+              <a href="/blog/read?articleid=<c:out value="${articleHeader.articleid}"/>">
+                <c:out value="${articleHeader.title}"/> (<fmt:formatDate value="${articleHeader.submitdate}" pattern="yyyy-MM-dd"/>)
+              </a>
+            </li>
+          </c:forEach>
         </div>
       </div>
       <%@ include file="/jsp/ideal/side-bar.jsp"%>

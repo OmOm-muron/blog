@@ -9,36 +9,36 @@ public class CategoryDTO {
      * フィールド：カテゴリの情報
      ******************************/
     // category ID
-    private int co_categoryid = -1;
+    private int categoryid = -1;
     // category name
-    private String co_categoryname;
+    private String categoryname;
     
     /******************************
      * Getter
      ******************************/
     public int getCategoryid() {
-        return this.co_categoryid;
+        return this.categoryid;
     }
     
     public String getCategoryname() {
-        return this.co_categoryname;
+        return this.categoryname;
     }
     
     /******************************
      * Setter
      ******************************/
-    public void setCategoryid(int ex_categoryid) {
-        this.co_categoryid = ex_categoryid;
+    public void setCategoryid(int categoryid) {
+        this.categoryid = categoryid;
     }
     
-    public void setCategoryname(String ex_categoryname) {
-        this.co_categoryname = ex_categoryname;
+    public void setCategoryname(String categoryname) {
+        this.categoryname = categoryname;
     }
     
     /******************************
      * check this instance is valid or not
      ******************************/
     public boolean isValid() {
-    	return this.co_categoryid >= 0;
+    	return this.categoryid >= 0;
     }
 }

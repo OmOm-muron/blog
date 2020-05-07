@@ -25,14 +25,9 @@
           </form>
         </div>
         <div class="category-list">
-          <li><a href="/blog/list-category?category=xxx">カテゴリ名</a></li>
-          <li><a href="/blog/list-category?category=xxx">カテゴリ名</a></li>
-          <li><a href="/blog/list-category?category=xxx">カテゴリ名</a></li>
-          <li><a href="/blog/list-category?category=xxx">カテゴリ名</a></li>
-          <li><a href="/blog/list-category?category=xxx">カテゴリ名</a></li>
-          <li><a href="/blog/list-category?category=xxx">カテゴリ名</a></li>
-          <li><a href="/blog/list-category?category=xxx">カテゴリ名</a></li>
-          <li><a href="/blog/list-category?category=xxx">カテゴリ名</a></li>
+          <c:forEach items="${categoryList}" var="category">
+            <li><a href="/blog/search-category?categoryid=<c:out value="${category.categoryid}"/>"><c:out value="${category.categoryname}"/></a></li>
+          </c:forEach>
         </div>
       </div>
       <%@ include file="/jsp/ideal/side-bar.jsp"%>

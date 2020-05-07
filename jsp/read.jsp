@@ -16,19 +16,16 @@
       <div class="main-content">
         <%@ include file="/html/back-to-top.html"%>
         <div class="article-meta-info">
-          <p>日付：時刻</p>
-          <p>カテゴリ：XXXX YYYY ZZZZ</p>
+          <p><fmt:formatDate value="${article.submitdate}" pattern="yyyy-MM-dd HH:mm:ss"/></p>
+          <p>カテゴリ:
+            <c:out value="${article.categoryname1}"/>  <c:out value="${article.categoryname2}"/>  <c:out value="${article.categoryname3}"/>  <c:out value="${article.categoryname4}"/>  <c:out value="${article.categoryname5}"/>
+          </p>
         </div>
         <div class="article-title">
-          <h2>記事タイトル</h2>
+          <h2><c:out value="${article.title}"/></h2>
         </div>
         <div class="article-content">
-          <p>本文</p>
-          <p>本文</p>
-          <p>本文</p>
-          <p>本文</p>
-          <p>本文</p>
-          <p>本文</p>
+          <pre><c:out value="${article.article}"/></pre>
         </div>
       </div>
       <%@ include file="/jsp/ideal/side-bar.jsp"%>

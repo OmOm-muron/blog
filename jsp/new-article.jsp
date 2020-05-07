@@ -16,6 +16,7 @@
       <div class="main-content">
         <%@ include file="/html/back-to-top.html"%>
         <form class="new-article" action="/blog/new-article" method="post">
+          <p><c:out value="${message}"/></p>
           <input type="submit" value="投稿">
           <input type="text" name="article-title" placeholder="記事タイトル">
           <textarea name="article-content" placeholder="記事本文"></textarea>

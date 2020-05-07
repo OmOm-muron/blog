@@ -5,19 +5,23 @@
         </div>
         <div class="latest-articles">
           <p>最新記事</p>
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
+          <c:forEach items="${latestArticles}" var="articleHeader">
+            <li>
+              <a href="/blog/read?articleid=<c:out value="${articleHeader.articleid}"/>">
+                <c:out value="${articleHeader.title}"/> (<fmt:formatDate value="${articleHeader.submitdate}" pattern="yyyy-MM-dd"/>) 
+              </a>
+            </li>
+          </c:forEach>
         </div>
         <div class="top-categories">
           <p>トップカテゴリ</p>
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
+          <c:forEach items="${topCategories}" var="category">
+            <li>
+              <a href="/blog/search-category?categoryid=<c:out value="${category.categoryid}"/>">
+                <c:out value="${category.categoryname}"/>
+              </a>
+            </li>
+          </c:forEach>
         </div>
         <div class="search-articles">
           <ul><a href="/blog/list-monthly">月別記事一覧</a></ul>

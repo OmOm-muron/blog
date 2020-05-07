@@ -16,25 +16,21 @@
       <div class="main-content">
         <%@ include file="/html/back-to-top.html"%>
         <div class="sub-title">
-          <p>日別記事一覧</p>
+          <p>日別記事一覧(<c:out value="${currentYmd}"/>)</p>
         </div>
         <div class="change-key">
-          <a href="/blog/list-daily?day=xx">前日(yyyy/MM/dd)</a>
-          <button type="button" name="select-day" value="yy">日選択</button>
-          <a href="/blog/list-daily?day=xx">翌日(yyyy/MM/dd)</a>
+          <a href="/blog/list-daily?ymd=<c:out value="${previousYmd}"/>">前日(<c:out value="${previousYmd}"/>)</a>
+          <button type="button" name="select-day" value="yyyy">日選択</button>
+          <a href="/blog/list-daily?ymd=<c:out value="${nextYmd}"/>">翌日(<c:out value="${nextYmd}"/>)</a>
         </div>
         <div class="article-list">
-          <li>記事タイトル(yyyy/MM/dd)</li>
-          <li>記事タイトル(yyyy/MM/dd)</li>
-          <li>記事タイトル(yyyy/MM/dd)</li>
-          <li>記事タイトル(yyyy/MM/dd)</li>
-          <li>記事タイトル(yyyy/MM/dd)</li>
-          <li>記事タイトル(yyyy/MM/dd)</li>
-          <li>記事タイトル(yyyy/MM/dd)</li>
-          <li>記事タイトル(yyyy/MM/dd)</li>
-          <li>記事タイトル(yyyy/MM/dd)</li>
-          <li>記事タイトル(yyyy/MM/dd)</li>
-          <li>記事タイトル(yyyy/MM/dd)</li>
+          <c:forEach items="${articleList}" var="articleHeader">
+            <li>
+              <a href="/blog/read?articleid=<c:out value="${articleHeader.articleid}"/>">
+                <c:out value="${articleHeader.title}"/> (<fmt:formatDate value="${articleHeader.submitdate}" pattern="yyyy-MM-dd"/>)
+              </a>
+            </li>
+          </c:forEach>
         </div>
       </div>
       <%@ include file="/jsp/ideal/side-bar.jsp"%>

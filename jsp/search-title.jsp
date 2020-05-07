@@ -25,17 +25,13 @@
           </form>
         </div>
         <div class="article-list">
-          <li>記事タイトル(yyyy/MM/dd)</li>
-          <li>記事タイトル(yyyy/MM/dd)</li>
-          <li>記事タイトル(yyyy/MM/dd)</li>
-          <li>記事タイトル(yyyy/MM/dd)</li>
-          <li>記事タイトル(yyyy/MM/dd)</li>
-          <li>記事タイトル(yyyy/MM/dd)</li>
-          <li>記事タイトル(yyyy/MM/dd)</li>
-          <li>記事タイトル(yyyy/MM/dd)</li>
-          <li>記事タイトル(yyyy/MM/dd)</li>
-          <li>記事タイトル(yyyy/MM/dd)</li>
-          <li>記事タイトル(yyyy/MM/dd)</li>
+          <c:forEach items="${articleList}" var="articleHeader">
+            <li>
+              <a href="/blog/read?articleid=<c:out value="${articleHeader.articleid}"/>">
+                <c:out value="${articleHeader.title}"/> (<fmt:formatDate value="${articleHeader.submitdate}" pattern="yyyy-MM-dd"/>)
+              </a>
+            </li>
+          </c:forEach>
         </div>
       </div>
       <%@ include file="/jsp/ideal/side-bar.jsp"%>

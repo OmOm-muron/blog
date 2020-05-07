@@ -16,20 +16,16 @@
       <div class="main-content">
         <%@ include file="/html/back-to-top.html"%>
         <div class="sub-title">
-          <p>カテゴリ：[カテゴリ名]の記事一覧</p>
+          <p>カテゴリ：<c:out value="${category.categoryname}"/>の記事一覧</p>
         </div>
         <div class="article-list">
-          <li>記事タイトル(yyyy/MM/dd)</li>
-          <li>記事タイトル(yyyy/MM/dd)</li>
-          <li>記事タイトル(yyyy/MM/dd)</li>
-          <li>記事タイトル(yyyy/MM/dd)</li>
-          <li>記事タイトル(yyyy/MM/dd)</li>
-          <li>記事タイトル(yyyy/MM/dd)</li>
-          <li>記事タイトル(yyyy/MM/dd)</li>
-          <li>記事タイトル(yyyy/MM/dd)</li>
-          <li>記事タイトル(yyyy/MM/dd)</li>
-          <li>記事タイトル(yyyy/MM/dd)</li>
-          <li>記事タイトル(yyyy/MM/dd)</li>
+          <c:forEach items="${articleList}" var="articleHeader">
+            <li>
+              <a href="/blog/read?articleid=<c:out value="${articleHeader.articleid}"/>">
+                <c:out value="${articleHeader.title}"/> (<fmt:formatDate value="${articleHeader.submitdate}" pattern="yyyy-MM-dd"/>)
+              </a>
+            </li>
+          </c:forEach>
         </div>
       </div>
       <%@ include file="/jsp/ideal/side-bar.jsp"%>

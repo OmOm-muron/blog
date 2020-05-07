@@ -9,7 +9,7 @@ import javax.sql.*;
  * DBとのConnectionを制御する。
  */
 public class RootDAO implements AutoCloseable {
-    private Connection co_connection = null;
+    private Connection connection = null;
 
     public RootDAO() {
     
@@ -21,36 +21,34 @@ public class RootDAO implements AutoCloseable {
      */
     public Connection getConnection() throws NamingException, SQLException {
         try {
-            if (co_connection == null || co_connection.isClosed()) {
+            if (connection == null || connection.isClosed()) {
                 // Connectionが存在しない、または既存Connectionがclose済みの時
-                InitialContext in_initCtx = new InitialContext();
-                DataSource in_ds = (DataSource) in_initCtx.lookup("java:comp/env/jdbc/portfolio/blog");
+                InitialContext initCtx = new InitialContext();
+                DataSource ds = (DataSource) initCtx.lookup("java:comp/env/jdbc/portfolio/common");
 
              // DBConnectionを取得
-                co_connection = in_ds.getConnection();
+                connection = ds.getConnection();
             }
         } catch (NamingException | SQLException e) {
             // connection = null にする
-            co_connection = null;
+            connection = null;
             // 例外はそのまま出力
             e.printStackTrace();
             throw e;
         }
-        return co_connection;
+        return connection;
     }
 
     /**
      * Close Connection
      */
     public void close() {
-        System.out.println("-----close connection-----");
-
         try {
-            co_connection.close();
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            co_connection = null;
+            connection = null;
         }
     }
 
@@ -65,13 +63,13 @@ public class RootDAO implements AutoCloseable {
      * Commit Transaction
      */
     public void commit() throws SQLException {
-        co_connection.commit();
+        connection.commit();
     }
 
     /**
      * Rollback Transaction
      */
     public void rollback() throws SQLException {
-        co_connection.rollback();
+        connection.rollback();
     }
 }

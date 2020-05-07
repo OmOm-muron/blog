@@ -8,7 +8,7 @@
 
   <servlet>
     <servlet-name>IndexServlet</servlet-name>
-    <servlet-class>blog.web.IndexServlet</servlet-class>
+    <servlet-class>blog.web.servlet.IndexServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>IndexServlet</servlet-name>
@@ -17,7 +17,7 @@
   
   <servlet>
     <servlet-name>ReadServlet</servlet-name>
-    <servlet-class>blog.web.ReadServlet</servlet-class>
+    <servlet-class>blog.web.servlet.ReadServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ReadServlet</servlet-name>
@@ -26,7 +26,7 @@
   
   <servlet>
     <servlet-name>ListMonthlyServlet</servlet-name>
-    <servlet-class>blog.web.ListMonthlyServlet</servlet-class>
+    <servlet-class>blog.web.servlet.ListMonthlyServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ListMonthlyServlet</servlet-name>
@@ -35,7 +35,7 @@
   
   <servlet>
     <servlet-name>ListDailyServlet</servlet-name>
-    <servlet-class>blog.web.ListDailyServlet</servlet-class>
+    <servlet-class>blog.web.servlet.ListDailyServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ListDailyServlet</servlet-name>
@@ -44,7 +44,7 @@
   
   <servlet>
     <servlet-name>SearchTitleServlet</servlet-name>
-    <servlet-class>blog.web.SearchTitleServlet</servlet-class>
+    <servlet-class>blog.web.servlet.SearchTitleServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>SearchTitleServlet</servlet-name>
@@ -53,7 +53,7 @@
   
   <servlet>
     <servlet-name>ListCategoryServlet</servlet-name>
-    <servlet-class>blog.web.ListCategoryServlet</servlet-class>
+    <servlet-class>blog.web.servlet.ListCategoryServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ListCategoryServlet</servlet-name>
@@ -62,7 +62,7 @@
   
   <servlet>
     <servlet-name>SearchCategoryServlet</servlet-name>
-    <servlet-class>blog.web.SearchCategoryServlet</servlet-class>
+    <servlet-class>blog.web.servlet.SearchCategoryServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>SearchCategoryServlet</servlet-name>
@@ -71,7 +71,7 @@
   
   <servlet>
     <servlet-name>NewArticleServlet</servlet-name>
-    <servlet-class>blog.web.NewArticleServlet</servlet-class>
+    <servlet-class>blog.web.servlet.NewArticleServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>NewArticleServlet</servlet-name>
@@ -80,7 +80,7 @@
   
   <servlet>
     <servlet-name>ManageCategoryServlet</servlet-name>
-    <servlet-class>blog.web.ManageCategoryServlet</servlet-class>
+    <servlet-class>blog.web.servlet.ManageCategoryServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ManageCategoryServlet</servlet-name>
@@ -89,7 +89,7 @@
   
   <servlet>
     <servlet-name>CreateCategoryServlet</servlet-name>
-    <servlet-class>blog.web.CreateCategoryServlet</servlet-class>
+    <servlet-class>blog.web.servlet.CreateCategoryServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>CreateCategoryServlet</servlet-name>
@@ -98,7 +98,7 @@
   
   <servlet>
     <servlet-name>DeleteCategoryServlet</servlet-name>
-    <servlet-class>blog.web.DeleteCategoryServlet</servlet-class>
+    <servlet-class>blog.web.servlet.DeleteCategoryServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>DeleteCategoryServlet</servlet-name>

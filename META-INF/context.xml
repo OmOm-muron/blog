@@ -6,7 +6,7 @@
             maxWaitMillis="-1"
             name="jdbc/portfolio/blog"
             type="javax.sql.DataSource"
-            url="jdbc:postgresql://192.168.116.11:5432/portfolio"
+            url="jdbc:postgresql://192.168.116.11:5432/portfolio?currentSchema=blog"
             username="postgres"
             password="postgres"
             defaultAutoCommit="false"

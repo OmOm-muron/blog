@@ -1,6 +1,6 @@
 package blog.dto;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 /**
  * @author Omura
@@ -11,66 +11,66 @@ public class CommentDTO {
      * フィールド：コメントの情報
      ******************************/
     // comment ID
-    private int co_commentid = -1;
+    private int commentid = -1;
     // article ID
-    private int co_articleid;
+    private int articleid;
     // comment submit date
-    private Date co_commentdate;
+    private Timestamp commentdate;
     // comment update date
-    private Date co_updatedate;
+    private Timestamp updatedate;
     // comment content
-    private String co_comment;
+    private String comment;
     
     /******************************
      * Getter
      ******************************/
     public int getCommentid() {
-        return this.co_commentid;
+        return this.commentid;
     }
     
     public int getArticleid() {
-        return this.co_articleid;
+        return this.articleid;
     }
     
-    public Date getCommentdate() {
-        return this.co_commentdate;
+    public Timestamp getCommentdate() {
+        return this.commentdate;
     }
     
-    public Date getUpdatedate() {
-        return this.co_updatedate;
+    public Timestamp getUpdatedate() {
+        return this.updatedate;
     }
     
     public String getComment() {
-        return this.co_comment;
+        return this.comment;
     }
     
     /******************************
      * Setter
      ******************************/
-    public void setCommentid(int ex_commentid) {
-        this.co_commentid = ex_commentid;
+    public void setCommentid(int commentid) {
+        this.commentid = commentid;
     }
     
-    public void setArticleid(int ex_articleid) {
-        this.co_articleid = ex_articleid;
+    public void setArticleid(int articleid) {
+        this.articleid = articleid;
     }
     
-    public void setCommentdate(Date ex_commentdate) {
-        this.co_commentdate = ex_commentdate;
+    public void setCommentdate(Timestamp commentdate) {
+        this.commentdate = commentdate;
     }
     
-    public void setUpdatedate(Date ex_updatedate) {
-        this.co_updatedate = ex_updatedate;
+    public void setUpdatedate(Timestamp updatedate) {
+        this.updatedate = updatedate;
     }
     
-    public void setComment(String ex_title) {
-        this.co_comment = ex_title;
+    public void setComment(String title) {
+        this.comment = title;
     }
     
     /******************************
      * check this instance is valid or not
      ******************************/
     public boolean isValid() {
-    	return this.co_commentid >= 0;
+    	return this.commentid >= 0;
     }
 }

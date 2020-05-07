@@ -1,9 +1,16 @@
 
 package login.web;
 
-import java.io.*;
-import javax.servlet.*;
-import javax.servlet.http.*;
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import blog.web.util.SidebarUtil;
 import login.dao.UserInformationDAO;
 
 /**
@@ -12,44 +19,44 @@ import login.dao.UserInformationDAO;
 public class LoginServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    protected void doGet(HttpServletRequest ex_req, HttpServletResponse ex_rsp) throws ServletException, IOException {
-        ex_req.setCharacterEncoding("UTF-8");
-        RequestDispatcher in_rd = ex_req.getRequestDispatcher("/jsp/login.jsp");
-        in_rd.forward(ex_req, ex_rsp);
+    protected void doGet(HttpServletRequest req, HttpServletResponse rsp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
+        RequestDispatcher rd = req.getRequestDispatcher("/jsp/login.jsp");
+        rd.forward(req, rsp);
     }
 
-    protected void doPost(HttpServletRequest ex_req, HttpServletResponse ex_rsp) throws ServletException, IOException {
-        ex_req.setCharacterEncoding("UTF-8");
+    protected void doPost(HttpServletRequest req, HttpServletResponse rsp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
 
-        // iセッション取得
-        HttpSession in_session = ex_req.getSession(true);
+        // セッション取得
+        HttpSession session = req.getSession(true);
 
-        // i画面の入力値を取得
-        String in_userid = ex_req.getParameter("userid");
-        String in_password = ex_req.getParameter("password");
+        // 画面の入力値を取得
+        String userid = req.getParameter("userid");
+        String password = req.getParameter("password");
 
-        boolean in_result;
+        boolean result;
 
-        // iログイン判定
-        try (UserInformationDAO in_dao = new UserInformationDAO()) {
-            in_result = in_dao.existsUser(in_userid, in_password);
+        // ログイン判定
+        try (UserInformationDAO dao = new UserInformationDAO()) {
+            result = dao.existsUser(userid, password);
+            // ついでにサイドバーの情報を付加
+            SidebarUtil.setLatestFiveArticles(req);
+            SidebarUtil.setTopFiveCategories(req);
         } catch (Exception e) {
             throw new ServletException(e);
         }
 
-        if (in_result) {
-            // iクエリ結果が存在すればログイン成功とする
-            in_session.setAttribute("login","true");
-
-            // test
-            ex_req.setAttribute("test","���O�C������");
+        if (result) {
+            // クエリ結果が存在すればログイン成功とする
+            session.setAttribute("login","true");
+            req.setAttribute("message","ログインしました。");
         } else {
-            // test
-            ex_req.setAttribute("test","���O�C�����s");
+            req.setAttribute("message","ユーザー情報に誤りがあります。");
         }
 
-        // iログイン完了画面へ(要編集)
-        RequestDispatcher in_rd = ex_req.getRequestDispatcher("/jsp/login.jsp");
-        in_rd.forward(ex_req,ex_rsp);
+        // ログイン完了画面へ
+        RequestDispatcher rd = req.getRequestDispatcher("/jsp/complete.jsp");
+        rd.forward(req, rsp);
     }
 }
